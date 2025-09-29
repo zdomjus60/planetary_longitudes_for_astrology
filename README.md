@@ -29,18 +29,42 @@ The source code for the AA+ library is included in the `aaplus/` directory.
 
 ## Building the Project
 
-The repository includes two shell scripts to compile the project in different ways: as a static build or a dynamic build.
+This project requires a C++ compiler (like g++) and `make` (though compilation is handled by shell scripts).
 
-### Static Build (`compile_static.sh`)
+### Prerequisites
+
+*   **C++ Compiler:** `g++` (version supporting C++17 or newer)
+*   **Git:** For cloning the repository.
+
+The AA+ library source code is already included in the `aaplus/` directory, so no separate installation is required for it.
+
+### Compilation
+
+The repository includes two shell scripts to compile the project:
+
+#### Static Build (`compile_static.sh`)
+
+To create a standalone executable:
 
 ```bash
 ./compile_static.sh
 ```
 This script compiles the AA+ library into a static archive (`libaastro.a`) and then links it directly into the final executable (`calcolatore_static`). The result is a single, self-contained executable with no external library dependencies.
 
-### Dynamic Build (`compile_dynamic.sh`)
+#### Dynamic Build (`compile_dynamic.sh`)
+
+To create an executable that links against a shared library:
 
 ```bash
 ./compile_dynamic.sh
 ```
 This script compiles the AA+ library into a shared object (`libaastro.so`) and links the main executable (`calcolatore_dynamic`) against it. This approach results in a smaller executable, but it requires the `libaastro.so` file to be present in the same directory (or in the system's library path) at runtime. The `-rpath` linker option is used to ensure the executable can find the library in its own directory.
+
+### Running the Executables
+
+After successful compilation, you can run the executables:
+
+```bash
+./calcolatore_static 2025-07-01T19:19:00
+./calcolatore_dynamic 2025-07-01T19:19:00
+```
