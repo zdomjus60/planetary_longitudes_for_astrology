@@ -1,0 +1,24 @@
+# File di output
+calcolatore_dynamic
+calcolatore_static
+libaastro.a
+libaastro.so
+
+# Directory degli oggetti
+obj/
+
+# Ambiente virtuale Python
+venv/
+
+# File oggetto
+*.o
+
+# Eseguibili
+*.out
+*.exe
+
+# Librerie
+*.dll
+*.so
+*.a
+*.dylib
