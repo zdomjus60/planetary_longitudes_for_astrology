@@ -16,7 +16,7 @@ mv *.o obj/dynamic/
 g++ -shared -o libaastro.so obj/dynamic/*.o
 
 # 5. Compila il programma principale linkando la libreria dinamica
-g++ main.cpp -I./aaplus -L. -laastro -o calcolatore_dynamic -std=c++17 -Wl,-rpath,.
+g++ main.cpp -I./aaplus -L. -laastro -o calculator_dynamic -std=c++17 -Wl,-rpath,.
 
 echo "--- Compilazione Dinamica Completata ---"
-echo "Eseguibile: ./calcolatore_dynamic"
+echo "Eseguibile: ./calculator_dynamic"

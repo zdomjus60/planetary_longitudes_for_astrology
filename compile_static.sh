@@ -16,7 +16,7 @@ mv *.o obj/static/
 ar rcs libaastro.a obj/static/*.o
 
 # 5. Compila il programma principale linkando la libreria statica
-g++ main.cpp -I./aaplus -L. -laastro -static -o calcolatore_static -std=c++17
+g++ main.cpp -I./aaplus -L. -laastro -static -o calculator_static -std=c++17
 
 echo "--- Compilazione Statica Completata ---"
-echo "Eseguibile: ./calcolatore_static"
+echo "Eseguibile: ./calculator_static"

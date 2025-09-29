@@ -18,7 +18,7 @@ The input date must be provided in the **ISO 8601 format**: `YYYY-MM-DDTHH:MM:SS
 
 Example:
 ```bash
-./calcolatore_static 2025-07-01T19:19:00
+./calculator_static 2025-07-01T19:19:00
 ```
 
 ## Astronomical Library
@@ -49,7 +49,7 @@ To create a standalone executable:
 ```bash
 ./compile_static.sh
 ```
-This script compiles the AA+ library into a static archive (`libaastro.a`) and then links it directly into the final executable (`calcolatore_static`). The result is a single, self-contained executable with no external library dependencies.
+This script compiles the AA+ library into a static archive (`libaastro.a`) and then links it directly into the final executable (`calculator_static`). The result is a single, self-contained executable with no external library dependencies.
 
 #### Dynamic Build (`compile_dynamic.sh`)
 
@@ -58,13 +58,13 @@ To create an executable that links against a shared library:
 ```bash
 ./compile_dynamic.sh
 ```
-This script compiles the AA+ library into a shared object (`libaastro.so`) and links the main executable (`calcolatore_dynamic`) against it. This approach results in a smaller executable, but it requires the `libaastro.so` file to be present in the same directory (or in the system's library path) at runtime. The `-rpath` linker option is used to ensure the executable can find the library in its own directory.
+This script compiles the AA+ library into a shared object (`libaastro.so`) and links the main executable (`calculator_dynamic`) against it. This approach results in a smaller executable, but it requires the `libaastro.so` file to be present in the same directory (or in the system's library path) at runtime. The `-rpath` linker option is used to ensure the executable can find the library in its own directory.
 
 ### Running the Executables
 
 After successful compilation, you can run the executables:
 
 ```bash
-./calcolatore_static 2025-07-01T19:19:00
-./calcolatore_dynamic 2025-07-01T19:19:00
+./calculator_static 2025-07-01T19:19:00
+./calculator_dynamic 2025-07-01T19:19:00
 ```
